@@ -61,7 +61,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-4 flex items-center justify-center relative scroll-mt-24">
+    <section id="contact" className="py-16 px-4 flex items-center justify-center relative scroll-mt-24">
       <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
         
         {/* Contact Info Text */}

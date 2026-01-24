@@ -17,8 +17,8 @@ const Home: React.FC = () => {
         {/* Background Image with Zoom In Out Animation */}
         <div className="absolute inset-0 overflow-hidden">
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-zoom-in-out"
-            style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1571896349842-68c47eb17998?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80")' }}
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-zoom-in-out blur-sm"
+            style={{ backgroundImage: 'url("/assets/herp.png")' }}
           ></div>
         </div>
         

@@ -24,7 +24,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
       <div className="shine-effect absolute inset-0 w-full h-full z-10 pointer-events-none"></div>
 
       {/* Image Container */}
-      <div className="relative h-72 overflow-hidden rounded-t-3xl">
+      <div className="relative h-56 overflow-hidden rounded-t-3xl">
         <img
           src={room.imageUrl}
           alt={room.name}
@@ -40,41 +40,41 @@ const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
 
       {/* Content */}
       <div className="p-8 flex-1 flex flex-col relative z-20">
-        <div className="flex justify-between items-start mb-3">
-          <h3 className="text-2xl font-serif font-bold text-white group-hover:text-accent-gold transition-colors drop-shadow-sm">
+        <div className="flex justify-between items-start mb-2">
+          <h3 className="text-xl font-serif font-bold text-white group-hover:text-accent-gold transition-colors drop-shadow-sm">
             {room.name}
           </h3>
         </div>
         
-        <p className="text-primary-100/70 text-sm mb-6 leading-relaxed font-light border-b border-white/10 pb-6">
+        <p className="text-primary-100/70 text-xs mb-4 leading-relaxed font-light border-b border-white/10 pb-4">
           {room.description}
         </p>
         
-        <div className="flex items-center space-x-2 mb-6 bg-white/5 px-4 py-2 rounded-lg w-fit border border-white/10 backdrop-blur-sm">
-          <Users size={18} className="text-accent-sand" />
-          <span className="text-sm font-medium text-primary-50">{room.capacity}</span>
+        <div className="flex items-center space-x-2 mb-4 bg-white/5 px-3 py-2 rounded-lg w-fit border border-white/10 backdrop-blur-sm">
+          <Users size={16} className="text-accent-sand" />
+          <span className="text-xs font-medium text-primary-50">{room.capacity}</span>
         </div>
 
         {/* Highlights */}
-        <div className="space-y-3 mb-8 flex-1">
+        <div className="space-y-2 mb-6 flex-1">
           {room.highlights.slice(0, 3).map((highlight, index) => (
-            <div key={index} className="flex items-center space-x-3">
-              <CheckCircle size={16} className="text-primary-500 flex-shrink-0 drop-shadow-[0_0_8px_rgba(52,160,109,0.5)]" />
-              <span className="text-sm text-primary-100/90 font-light tracking-wide">{highlight}</span>
+            <div key={index} className="flex items-center space-x-2">
+              <CheckCircle size={14} className="text-primary-500 flex-shrink-0 drop-shadow-[0_0_8px_rgba(52,160,109,0.5)]" />
+              <span className="text-xs text-primary-100/90 font-light tracking-wide">{highlight}</span>
             </div>
           ))}
           {room.highlights.length > 3 && (
-            <span className="text-xs text-primary-400 italic pl-8 mt-2 block opacity-80">+ {room.highlights.length - 3} more amenities</span>
+            <span className="text-xs text-primary-400 italic pl-6 mt-1 block opacity-80">+ {room.highlights.length - 3} more</span>
           )}
         </div>
 
         {/* Action */}
         <button 
           onClick={() => scrollToContact(room.name)}
-          className="w-full mt-auto py-4 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 rounded-xl text-center font-bold text-white shadow-lg shadow-primary-700/30 border border-primary-500/30 flex items-center justify-center space-x-2 group-hover:space-x-4 transition-all duration-300 group-hover:shadow-primary-600/50"
+          className="w-full mt-auto py-3 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 rounded-lg text-center font-bold text-white text-sm shadow-lg shadow-primary-700/30 border border-primary-500/30 flex items-center justify-center space-x-2 group-hover:space-x-3 transition-all duration-300 group-hover:shadow-primary-600/50"
         >
-          <span className="tracking-widest uppercase text-xs">Enquire Now</span>
-          <ArrowRight size={16} />
+          <span className="tracking-wider uppercase text-xs">Enquire</span>
+          <ArrowRight size={14} />
         </button>
       </div>
     </div>

@@ -60,7 +60,7 @@ const Activities: React.FC = () => {
   }, [activities.length]);
 
   return (
-    <section id="activities" className="py-24 px-6 flex flex-col items-center relative overflow-hidden scroll-mt-24">
+    <section id="activities" className="py-16 px-6 flex flex-col items-center relative overflow-hidden scroll-mt-24">
       {/* Decorative background element */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-primary-500/10 blur-[120px] rounded-full pointer-events-none"></div>
 

@@ -4,12 +4,12 @@ import { ROOMS } from '../lib/constants';
 
 const Rooms: React.FC = () => {
   return (
-    <section id="accommodations" className="pt-10 pb-24 px-6 scroll-mt-24">
+    <section id="accommodations" className="pt-4 pb-16 px-6 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-20">
-          <h2 className="text-4xl md:text-7xl font-serif font-bold text-white mb-6 md:mb-8 text-glow">Our Accommodations</h2>
-          <div className="h-1.5 w-32 bg-gradient-to-r from-transparent via-primary-500 to-transparent mx-auto rounded-full mb-8"></div>
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-4 md:mb-6 text-glow">Our Accommodations</h2>
+          <div className="h-1.5 w-32 bg-gradient-to-r from-transparent via-primary-500 to-transparent mx-auto rounded-full mb-6"></div>
         </div>
 
         {/* Grid/Slider Container */}
