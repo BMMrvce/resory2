@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Clock, Tag, Loader2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { fetchActivities } from '../services/dataService';
 import { Activity } from '../lib/types';
@@ -7,6 +7,10 @@ const Activities: React.FC = () => {
   const [activities, setActivities] = useState<Activity[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Touch handling state
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   useEffect(() => {
     const loadData = async () => {
@@ -23,6 +27,29 @@ const Activities: React.FC = () => {
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev - 1 + activities.length) % activities.length);
+  };
+
+  // Touch Handlers
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const minSwipeDistance = 50;
+    
+    if (distance > minSwipeDistance) {
+      nextSlide();
+    } else if (distance < -minSwipeDistance) {
+      prevSlide();
+    }
   };
 
   // Auto-play carousel
@@ -50,9 +77,14 @@ const Activities: React.FC = () => {
             <Loader2 className="w-12 h-12 text-primary-400 animate-spin" />
           </div>
         ) : (
-          <div className="relative w-full max-w-4xl mx-auto h-[450px] perspective-1000">
+          <div 
+            className="relative w-full max-w-4xl mx-auto h-[450px] perspective-1000"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             {/* Carousel Container */}
-            <div className="relative w-full h-full overflow-hidden rounded-3xl glass-card shadow-2xl border border-white/10 group hover:border-primary-500/30 transition-colors duration-500">
+            <div className="relative w-full h-full overflow-hidden rounded-3xl glass-card shadow-2xl border border-white/10 group hover:border-primary-500/30 transition-colors duration-500 select-none">
               
               {/* Background Image of Current Activity */}
               <div key={currentIndex} className="absolute inset-0">
@@ -67,14 +99,14 @@ const Activities: React.FC = () => {
               {/* Navigation Arrows */}
               <button 
                 onClick={(e) => { e.stopPropagation(); prevSlide(); }}
-                className="absolute top-1/2 left-4 z-20 p-3 rounded-full bg-black/20 backdrop-blur-md border border-white/10 text-white hover:bg-primary-500/80 transition-all hover:scale-110 opacity-0 group-hover:opacity-100"
+                className="absolute top-1/2 left-4 z-20 p-3 rounded-full bg-black/20 backdrop-blur-md border border-white/10 text-white hover:bg-primary-500/80 transition-all hover:scale-110 opacity-0 group-hover:opacity-100 hidden md:block"
               >
                 <ChevronLeft size={24} />
               </button>
               
               <button 
                 onClick={(e) => { e.stopPropagation(); nextSlide(); }}
-                className="absolute top-1/2 right-4 z-20 p-3 rounded-full bg-black/20 backdrop-blur-md border border-white/10 text-white hover:bg-primary-500/80 transition-all hover:scale-110 opacity-0 group-hover:opacity-100"
+                className="absolute top-1/2 right-4 z-20 p-3 rounded-full bg-black/20 backdrop-blur-md border border-white/10 text-white hover:bg-primary-500/80 transition-all hover:scale-110 opacity-0 group-hover:opacity-100 hidden md:block"
               >
                 <ChevronRight size={24} />
               </button>

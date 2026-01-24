@@ -21,32 +21,32 @@ const Footer: React.FC = () => {
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
               <Leaf className="text-primary-400 w-8 h-8" />
-              <span className="text-3xl font-serif font-bold text-glow">Shine Lavish</span>
+              <span className="text-3xl font-serif font-bold text-glow text-accent-sand">Shine Lavish</span>
             </div>
             <p className="text-gray-400 leading-relaxed font-light">
               Experience the ultimate luxury amidst nature. A perfect blend of comfort, adventure, and tranquility awaiting your arrival.
             </p>
             <div className="flex space-x-4 pt-2">
-              <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-primary-500 hover:text-white transition-all duration-300 border border-white/5 hover:border-primary-400"><Instagram size={20} /></a>
-              <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-primary-500 hover:text-white transition-all duration-300 border border-white/5 hover:border-primary-400"><Facebook size={20} /></a>
-              <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-primary-500 hover:text-white transition-all duration-300 border border-white/5 hover:border-primary-400"><Twitter size={20} /></a>
+              <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-primary-600 hover:text-white transition-all duration-300 border border-white/5 hover:border-primary-500"><Instagram size={20} /></a>
+              <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-primary-600 hover:text-white transition-all duration-300 border border-white/5 hover:border-primary-500"><Facebook size={20} /></a>
+              <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-primary-600 hover:text-white transition-all duration-300 border border-white/5 hover:border-primary-500"><Twitter size={20} /></a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-6">
-            <h3 className="text-xl font-serif font-semibold text-primary-300">Quick Explore</h3>
+            <h3 className="text-xl font-serif font-semibold text-accent-gold">Quick Explore</h3>
             <ul className="space-y-3">
-              <li><button onClick={() => scrollToSection('accommodations')} className="text-gray-400 hover:text-primary-200 hover:translate-x-2 inline-block transition-transform duration-300">Our Accommodations</button></li>
-              <li><button onClick={() => scrollToSection('activities')} className="text-gray-400 hover:text-primary-200 hover:translate-x-2 inline-block transition-transform duration-300">Activities</button></li>
-              <li><button onClick={() => scrollToSection('gallery')} className="text-gray-400 hover:text-primary-200 hover:translate-x-2 inline-block transition-transform duration-300">Gallery</button></li>
-              <li><button onClick={() => scrollToSection('contact')} className="text-gray-400 hover:text-primary-200 hover:translate-x-2 inline-block transition-transform duration-300">Contact Us</button></li>
+              <li><button onClick={() => scrollToSection('accommodations')} className="text-gray-400 hover:text-accent-sand hover:translate-x-2 inline-block transition-transform duration-300">Our Accommodations</button></li>
+              <li><button onClick={() => scrollToSection('activities')} className="text-gray-400 hover:text-accent-sand hover:translate-x-2 inline-block transition-transform duration-300">Activities</button></li>
+              <li><button onClick={() => scrollToSection('gallery')} className="text-gray-400 hover:text-accent-sand hover:translate-x-2 inline-block transition-transform duration-300">Gallery</button></li>
+              <li><button onClick={() => scrollToSection('contact')} className="text-gray-400 hover:text-accent-sand hover:translate-x-2 inline-block transition-transform duration-300">Contact Us</button></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div className="space-y-6">
-            <h3 className="text-xl font-serif font-semibold text-primary-300">Get in Touch</h3>
+            <h3 className="text-xl font-serif font-semibold text-accent-gold">Get in Touch</h3>
             <div className="flex items-start space-x-4 group">
               <div className="p-2 bg-primary-500/10 rounded-lg group-hover:bg-primary-500/20 transition-colors">
                 <MapPin className="text-primary-400 w-5 h-5" />

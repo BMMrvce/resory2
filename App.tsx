@@ -12,18 +12,20 @@ import Testimonials from './pages/Testimonials';
 const App: React.FC = () => {
   return (
     <>
-      <div className="relative min-h-screen text-white selection:bg-primary-500 selection:text-white">
+      <div className="relative min-h-screen text-white selection:bg-accent-gold selection:text-white">
         
         {/* Fixed Global Background */}
         <div 
-          className="fixed inset-0 z-[-1] bg-cover bg-center bg-no-repeat"
+          className="fixed inset-0 z-[-1] bg-cover bg-center bg-no-repeat transition-all duration-1000"
           style={{ 
-            backgroundImage: 'url("https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80")',
-            filter: 'brightness(0.6) sepia(0.2) hue-rotate(190deg) saturate(1.8) contrast(1.1)' 
+            backgroundImage: 'url("https://images.unsplash.com/photo-1542259659-4b79b8f95c4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80")', // Lush forest nature background
+            filter: 'brightness(0.55) contrast(1.1) saturate(1.1)' 
           }}
         />
-        {/* Deep Royal Blue Glass Gradient Overlay */}
-        <div className="fixed inset-0 z-[-1] bg-gradient-to-br from-primary-950/95 via-primary-950/90 to-primary-900/90 mix-blend-multiply pointer-events-none"></div>
+        
+        {/* Premium Overlay for Depth - Warm & Green tones */}
+        <div className="fixed inset-0 z-[-1] bg-gradient-to-b from-primary-950/90 via-primary-900/70 to-primary-950/95 pointer-events-none mix-blend-multiply"></div>
+        <div className="fixed inset-0 z-[-1] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary-400/10 via-transparent to-transparent pointer-events-none"></div>
 
         <Navbar />
         

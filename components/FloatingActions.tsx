@@ -9,7 +9,7 @@ const FloatingActions: React.FC = () => {
         href="https://wa.me/919876543210" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="p-4 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all hover:scale-110 flex items-center justify-center animate-bounce-slow group"
+        className="p-4 bg-[#25D366] hover:bg-[#20b858] text-white rounded-full shadow-[0_0_20px_rgba(37,211,102,0.4)] transition-all hover:scale-110 flex items-center justify-center animate-bounce-slow group"
         title="Chat on WhatsApp"
       >
         <MessageCircle size={28} />
@@ -18,7 +18,7 @@ const FloatingActions: React.FC = () => {
       {/* Call Button */}
       <a 
         href="tel:+919876543210" 
-        className="p-4 bg-primary-500 hover:bg-primary-600 text-white rounded-full shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all hover:scale-110 flex items-center justify-center group"
+        className="p-4 bg-primary-600 hover:bg-primary-500 text-white rounded-full shadow-[0_0_20px_rgba(52,160,109,0.4)] transition-all hover:scale-110 flex items-center justify-center group"
         title="Call Us"
       >
         <Phone size={28} />

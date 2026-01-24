@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
         <div className="flex flex-col justify-center space-y-8 order-2 lg:order-1">
           <div>
             <h2 className="text-4xl md:text-6xl font-serif font-bold text-white text-glow mb-6">
-              Plan Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-300 to-sky-400">Getaway</span>
+              Plan Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-sand to-accent-gold">Getaway</span>
             </h2>
             <p className="text-lg text-gray-300 leading-relaxed font-light">
               Ready to experience luxury amidst nature? Fill out the form and our team will get back to you immediately to confirm your reservation.
@@ -93,7 +93,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-serif font-bold text-lg mb-1">Phone</h4>
-                  <a href="tel:+919876543210" className="text-gray-300 font-light hover:text-primary-300 transition-colors">+91 98765 43210</a>
+                  <a href="tel:+919876543210" className="text-gray-300 font-light hover:text-accent-sand transition-colors">+91 98765 43210</a>
                 </div>
               </div>
 
@@ -103,7 +103,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-serif font-bold text-lg mb-1">Email</h4>
-                  <a href="mailto:bookings@shinelavish.com" className="text-gray-300 font-light hover:text-primary-300 transition-colors">bookings@shinelavish.com</a>
+                  <a href="mailto:bookings@shinelavish.com" className="text-gray-300 font-light hover:text-accent-sand transition-colors">bookings@shinelavish.com</a>
                 </div>
               </div>
           </div>
@@ -118,14 +118,14 @@ const Contact: React.FC = () => {
 
            {status === 'success' ? (
              <div className="flex flex-col items-center justify-center h-[500px] text-center space-y-6 animate-fade-in">
-               <div className="w-20 h-20 bg-primary-500 rounded-full flex items-center justify-center mb-2 shadow-[0_0_30px_rgba(14,165,233,0.6)]">
+               <div className="w-20 h-20 bg-primary-500 rounded-full flex items-center justify-center mb-2 shadow-[0_0_30px_rgba(52,160,109,0.6)]">
                  <CheckCircle className="text-white w-10 h-10" />
                </div>
                <h3 className="text-3xl font-bold text-white">Thank You!</h3>
                <p className="text-gray-300 text-lg">{statusMessage}</p>
                <button 
                  onClick={() => setStatus('idle')}
-                 className="mt-6 text-primary-300 hover:text-white underline decoration-primary-500/50 underline-offset-4"
+                 className="mt-6 text-accent-sand hover:text-white underline decoration-primary-500/50 underline-offset-4"
                >
                  Send another enquiry
                </button>
