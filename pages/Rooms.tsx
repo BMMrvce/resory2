@@ -4,22 +4,34 @@ import { ROOMS } from '../lib/constants';
 
 const Rooms: React.FC = () => {
   return (
-    <section id="accommodations" className="py-24 px-6">
+    <section id="accommodations" className="py-24 px-6 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-7xl font-serif font-bold text-white mb-8 text-glow">Our Accommodations</h2>
+        <div className="text-center mb-12 md:mb-20">
+          <h2 className="text-4xl md:text-7xl font-serif font-bold text-white mb-6 md:mb-8 text-glow">Our Accommodations</h2>
           <div className="h-1.5 w-32 bg-gradient-to-r from-transparent via-primary-500 to-transparent mx-auto rounded-full mb-8"></div>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light">
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-light">
             From cozy A-frames for couples to spacious villas for large groups, find your perfect sanctuary in the wild.
           </p>
         </div>
 
-        {/* Grid - Showing All Rooms */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {ROOMS.map((room) => (
-            <RoomCard key={room.id} room={room} />
-          ))}
+        {/* Grid/Slider Container */}
+        <div className="relative">
+           {/* Mobile: Horizontal Slider, Desktop: Grid */}
+           <div className="flex overflow-x-auto pb-8 gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-10 md:overflow-visible md:pb-0 snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              {ROOMS.map((room) => (
+                <div key={room.id} className="min-w-[85vw] sm:min-w-[400px] md:min-w-0 snap-center md:snap-align-none h-full">
+                   <RoomCard room={room} />
+                </div>
+              ))}
+           </div>
+           
+           {/* Visual hint for mobile users */}
+           <div className="md:hidden flex justify-center mt-2 space-x-1 animate-pulse">
+             <div className="w-1.5 h-1.5 bg-primary-400 rounded-full"></div>
+             <div className="w-1.5 h-1.5 bg-primary-400 rounded-full"></div>
+             <div className="w-1.5 h-1.5 bg-primary-400 rounded-full"></div>
+           </div>
         </div>
       </div>
     </section>

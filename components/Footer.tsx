@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
           </div>
           <div className="mt-4 md:mt-0">
             <span className="text-gray-600">Built by </span>
-            <a href="https://tantravruksha.dev" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-white transition-colors font-medium">tantravruksha.dev</a>
+            <a href="https://tantravruksha.in" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-white transition-colors font-medium">tantravruksha.in</a>
           </div>
         </div>
       </div>

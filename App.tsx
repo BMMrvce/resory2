@@ -7,6 +7,7 @@ import Rooms from './pages/Rooms';
 import Activities from './pages/Activities';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
+import Testimonials from './pages/Testimonials';
 
 const App: React.FC = () => {
   return (
@@ -18,11 +19,11 @@ const App: React.FC = () => {
           className="fixed inset-0 z-[-1] bg-cover bg-center bg-no-repeat"
           style={{ 
             backgroundImage: 'url("https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80")',
-            filter: 'brightness(0.6) sepia(0.3) hue-rotate(180deg) saturate(1.8) contrast(1.1)' 
+            filter: 'brightness(0.6) sepia(0.2) hue-rotate(190deg) saturate(1.8) contrast(1.1)' 
           }}
         />
-        {/* Heavy Blue Glass Gradient Overlay */}
-        <div className="fixed inset-0 z-[-1] bg-gradient-to-br from-primary-950/90 via-primary-950/85 to-primary-900/90 mix-blend-multiply pointer-events-none"></div>
+        {/* Deep Royal Blue Glass Gradient Overlay */}
+        <div className="fixed inset-0 z-[-1] bg-gradient-to-br from-primary-950/95 via-primary-950/90 to-primary-900/90 mix-blend-multiply pointer-events-none"></div>
 
         <Navbar />
         
@@ -31,6 +32,7 @@ const App: React.FC = () => {
           <Rooms />
           <Activities />
           <Gallery />
+          <Testimonials />
           <Contact />
         </main>
         

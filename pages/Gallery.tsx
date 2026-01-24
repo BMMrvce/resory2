@@ -6,7 +6,7 @@ const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
-    <section id="gallery" className="py-24 px-4 md:px-6 bg-primary-900/20">
+    <section id="gallery" className="py-24 px-4 md:px-6 bg-primary-900/20 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 text-glow">Gallery</h2>
