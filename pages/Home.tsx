@@ -18,9 +18,13 @@ const Home: React.FC = () => {
       <div className="relative h-full w-full overflow-hidden">
         {/* Background Image with Zoom In Out Animation */}
         <div className="absolute inset-0 overflow-hidden">
-          <div
+          <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-zoom-in-out blur-sm"
             style={{ backgroundImage: 'url("/herp.png")' }}
+          ></div>
+        </div>
+        
+        {/* Glossy Overlay - Modern Resort Tone */}
         <div className="absolute inset-0 bg-gradient-to-b from-primary-950/60 via-primary-950/30 to-primary-950"></div>
 
         {/* Hero Content */}
