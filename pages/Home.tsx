@@ -20,11 +20,7 @@ const Home: React.FC = () => {
         <div className="absolute inset-0 overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-zoom-in-out blur-sm"
-            style={{ backgroundImage: 'url("/assets/herp.png")' }}
-          ></div>
-        </div>
-
-        {/* Glossy Overlay - Modern Resort Tone */}
+            style={{ backgroundImage: 'url("/herp.png")' }}
         <div className="absolute inset-0 bg-gradient-to-b from-primary-950/60 via-primary-950/30 to-primary-950"></div>
 
         {/* Hero Content */}
