@@ -76,7 +76,7 @@ export const ROOMS: Room[] = [
   {
     id: "aframe",
     name: "Lavish Mini A-Frame",
-    price: 2999,
+    price: 2299,
     capacity: "2 People",
     capacityCount: 2,
     description: "A cozy, budget-friendly nature stay.",
