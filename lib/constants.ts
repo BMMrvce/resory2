@@ -6,14 +6,33 @@ const activityImages = import.meta.glob<string>(
   { as: "url", eager: true },
 );
 
+// Map activity filenames (without extension) to their titles
+// Add more entries here as you add new activity images
+const ACTIVITY_TITLES: Record<string, string> = {
+  "WhatsApp Image 2026-01-26 at 8.04.08 PM": "Bonfire & Music",
+  archery: "Archery Session",
+  rope: "Rope Course Adventure",
+  swim: "Swimming Pool Access",
+  car: "Car activity ",
+  "jeep-safari": "Off-Road Jeep Safari",
+  yoga: "Sunrise Yoga Session",
+  cooking: "Traditional Cooking Class",
+};
+
 // Generate activities dynamically based on available images
-export const MOCK_ACTIVITIES: Activity[] = Object.entries(activityImages).map(
-  ([, url], index) => ({
-    id: String(index + 1),
-    title: `Activity ${index + 1}`,
-    image: url,
-  }),
-);
+export const MOCK_ACTIVITIES: Activity[] = Object.entries(activityImages)
+  .sort(([pathA], [pathB]) => pathA.localeCompare(pathB)) // Sort for consistent order
+  .map(([path, url], index) => {
+    // Extract filename without extension: "../assets/activities/nature-walk.jpg" -> "nature-walk"
+    const filename = path.split("/").pop()?.split(".")[0] || "";
+    const title = ACTIVITY_TITLES[filename] || `Activity ${index + 1}`;
+
+    return {
+      id: String(index + 1),
+      title,
+      image: url,
+    };
+  });
 
 // Dynamically import all images from the rooms folder
 const roomImages = import.meta.glob<string>(
@@ -143,12 +162,7 @@ export const ROOMS: Room[] = [
     capacity: "Day Visitors",
     capacityCount: 0,
     description: "Day-out experience with meals and refreshments included.",
-    highlights: [
-      "Welcome Drinks",
-      "Breakfast",
-      "Lunch",
-      "Hi-tea",
-    ],
+    highlights: ["Welcome Drinks", "Breakfast", "Lunch", "Hi-tea"],
     imageUrl: getRoomImage("dayout"),
   },
 ];
