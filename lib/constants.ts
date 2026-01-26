@@ -48,8 +48,9 @@ export const ROOMS: Room[] = [
     capacityCount: 8,
     description: "The ultimate luxury experience for large families or groups.",
     highlights: [
-      "AC 4-sharing & 2-sharing rooms",
-      "52-inch Smart TV",
+      "Air conditioned rooms (A/C)",
+      "Smart TV",
+      "WiFi Available",
       "Private Swimming Pool",
       "Private Lawn Area",
       "Calm & Private Ambience",
@@ -65,6 +66,7 @@ export const ROOMS: Room[] = [
     description: "Perfect for couples looking for a peaceful getaway.",
     highlights: [
       "AC Couple Room",
+      "WiFi Available",
       "Greenery View",
       "Peaceful Ambience",
       "Attached Balcony",
@@ -96,6 +98,7 @@ export const ROOMS: Room[] = [
     highlights: [
       "Spacious Quad Room",
       "AC Room",
+      "WiFi Available",
       "Nature View Windows",
       "Sitting Area",
     ],
@@ -107,7 +110,8 @@ export const ROOMS: Room[] = [
     price: 2499,
     capacity: "12-15 People",
     capacityCount: 15,
-    description: "Ideal for large group getaways and corporate retreats.",
+    description:
+      "Ideal for Families , large group getaways and corporate retreats.",
     highlights: [
       "Fully AC Dormitory",
       "TV + High-speed WiFi",
@@ -126,6 +130,7 @@ export const ROOMS: Room[] = [
     highlights: [
       "Resort Camping Experience",
       "Safe & Cozy Setup",
+      "WiFi Available",
       "Outdoor Nature Feel",
       "Bonfire Access",
     ],
@@ -134,7 +139,10 @@ export const ROOMS: Room[] = [
 ];
 
 // Dynamically import all images from the gallery folder
-const galleryImages = import.meta.glob<string>('../assets/gallery/*.{jpg,jpeg,png,gif,webp}', { as: 'url', eager: true });
+const galleryImages = import.meta.glob<string>(
+  "../assets/gallery/*.{jpg,jpeg,png,gif,webp}",
+  { as: "url", eager: true },
+);
 
 // Generate gallery images dynamically based on available images
 export const GALLERY_IMAGES: string[] = Object.values(galleryImages);
