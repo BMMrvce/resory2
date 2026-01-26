@@ -18,6 +18,9 @@ const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
     }
   };
 
+  // Show day pricing for the dayout package
+  const priceSuffix = room.id === "dayout" ? "/ day" : "/ night";
+
   return (
     <div className="glass-card rounded-3xl group flex flex-col h-full hover:shadow-[0_20px_60px_rgba(52,160,109,0.2)] transition-all duration-500 hover:-translate-y-2">
       {/* Shine Effect Container */}
@@ -37,7 +40,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
             ₹{room.price}
           </span>
           <span className="text-xs font-medium text-primary-100 opacity-80">
-            / night
+            {priceSuffix}
           </span>
         </div>
       </div>
