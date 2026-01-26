@@ -12,9 +12,9 @@ export interface Room {
 export interface Activity {
   id: string;
   title: string;
-  description: string;
+  description?: string;
   image: string;
-  timing: string;
+  timing?: string;
   price?: string;
 }
 
@@ -29,4 +29,4 @@ export interface Enquiry {
   created_at?: string;
 }
 
-export type Tab = 'home' | 'rooms' | 'activities' | 'gallery' | 'contact';
+export type Tab = "home" | "rooms" | "activities" | "gallery" | "contact";

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Clock, Tag, Loader2, ChevronLeft, ChevronRight } from "lucide-react";
+import { Loader2, ChevronLeft, ChevronRight } from "lucide-react";
 import { fetchActivities } from "../services/dataService";
 import { Activity } from "../lib/types";
 
@@ -125,33 +125,6 @@ const Activities: React.FC = () => {
               </button>
 
               {/* Content Overlay */}
-              <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 z-10 bg-gradient-to-t from-primary-950 to-transparent pt-24">
-                <div className="animate-fade-in-up">
-                  <div className="flex flex-wrap items-center gap-3 mb-3">
-                    <div className="flex items-center space-x-1.5 text-primary-200 bg-primary-950/60 px-3 py-1 rounded-full backdrop-blur-sm border border-primary-500/30">
-                      <Clock size={14} />
-                      <span className="text-xs font-semibold tracking-wide">
-                        {activities[currentIndex]?.timing}
-                      </span>
-                    </div>
-                    {activities[currentIndex]?.price && (
-                      <div className="flex items-center space-x-1.5 text-primary-200 bg-primary-950/60 px-3 py-1 rounded-full backdrop-blur-sm border border-primary-500/30">
-                        <Tag size={14} />
-                        <span className="text-xs font-semibold tracking-wide">
-                          {activities[currentIndex]?.price}
-                        </span>
-                      </div>
-                    )}
-                  </div>
-
-                  <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-3 drop-shadow-lg">
-                    {activities[currentIndex]?.title}
-                  </h2>
-                  <p className="text-base md:text-lg text-gray-200 max-w-xl leading-relaxed drop-shadow-md line-clamp-2 md:line-clamp-3">
-                    {activities[currentIndex]?.description}
-                  </p>
-                </div>
-              </div>
 
               {/* Indicators */}
               <div className="absolute bottom-6 right-8 z-20 flex space-x-2">
