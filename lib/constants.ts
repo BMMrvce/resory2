@@ -133,13 +133,8 @@ export const ROOMS: Room[] = [
   },
 ];
 
-export const GALLERY_IMAGES = [
-  "https://images.unsplash.com/photo-1571896349842-68c47eb17998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1497436072909-60f360e1d4b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-];
+// Dynamically import all images from the gallery folder
+const galleryImages = import.meta.glob<string>('../assets/gallery/*.{jpg,jpeg,png,gif,webp}', { as: 'url', eager: true });
+
+// Generate gallery images dynamically based on available images
+export const GALLERY_IMAGES: string[] = Object.values(galleryImages);
