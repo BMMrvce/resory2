@@ -17,7 +17,7 @@ const Rooms: React.FC = () => {
         {/* Grid/Slider Container */}
         <div className="relative">
           {/* Mobile: Horizontal Slider, Desktop: Grid */}
-          <div className="flex overflow-x-auto pb-8 gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-10 md:overflow-visible md:pb-0 snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <div className="flex overflow-x-auto pb-8 gap-6 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-10 md:overflow-visible md:pb-0 snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] md:[&>div:last-child]:md:col-span-2 md:[&>div:last-child]:md:max-w-xl md:[&>div:last-child]:md:mx-auto lg:[&>div:last-child]:lg:col-span-3 lg:[&>div:last-child]:lg:max-w-2xl lg:[&>div:last-child]:lg:mx-auto">
             {ROOMS.map((room) => (
               <div
                 key={room.id}
