@@ -63,7 +63,8 @@ export const ROOMS: Room[] = [
     price: 3499,
     capacity: "2 People",
     capacityCount: 2,
-    description: "Perfect for couples looking for a peaceful getaway.",
+    description:
+      "Perfect for couples looking for a peaceful getaway and Candle night dinner.",
     highlights: [
       "AC Couple Room",
       "WiFi Available",
