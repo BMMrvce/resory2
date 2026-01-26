@@ -136,6 +136,21 @@ export const ROOMS: Room[] = [
     ],
     imageUrl: getRoomImage("camping"),
   },
+  {
+    id: "dayout",
+    name: "Dayout Package",
+    price: 999,
+    capacity: "Day Visitors",
+    capacityCount: 0,
+    description: "Day-out experience with meals and refreshments included.",
+    highlights: [
+      "Welcome Drinks",
+      "Breakfast",
+      "Lunch",
+      "Hi-tea",
+    ],
+    imageUrl: getRoomImage("dayout"),
+  },
 ];
 
 // Dynamically import all images from the gallery folder
