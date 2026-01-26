@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
               <img 
-                src="/assets/imp/logo.jpeg" 
+                src="/logo.jpeg" 
                 alt="Shine Lavish Logo"
                 className="w-12 h-12 rounded-lg object-cover shadow-[0_0_20px_rgba(52,160,109,0.4)] border border-primary-500/30"
               />

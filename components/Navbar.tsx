@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
         {/* Logo */}
         <button onClick={() => scrollToSection('home')} className="flex items-center space-x-3 group relative z-50">
           <img 
-            src="/assets/imp/logo.jpeg" 
+            src="/logo.jpeg" 
             alt="Shine Lavish Logo"
             className="w-12 h-12 rounded-xl object-cover shadow-[0_0_20px_rgba(52,160,109,0.4)] border border-primary-500/30 group-hover:scale-110 transition-transform"
           />
