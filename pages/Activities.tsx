@@ -93,7 +93,13 @@ const Activities: React.FC = () => {
             onTouchEnd={onTouchEnd}
           >
             {/* Carousel Container */}
-            <div className="relative w-full h-full overflow-hidden rounded-3xl glass-card shadow-2xl border border-white/10 group hover:border-primary-500/30 transition-colors duration-500 select-none cursor-zoom-in md:cursor-default" onClick={() => window.innerWidth < 768 && setSelectedImage(activities[currentIndex]?.image)}>
+            <div
+              className="relative w-full h-full overflow-hidden rounded-3xl glass-card shadow-2xl border border-white/10 group hover:border-primary-500/30 transition-colors duration-500 select-none cursor-zoom-in md:cursor-default"
+              onClick={() =>
+                window.innerWidth < 768 &&
+                setSelectedImage(activities[currentIndex]?.image)
+              }
+            >
               {/* Background Image of Current Activity */}
               <div key={currentIndex} className="absolute inset-0">
                 <img
@@ -149,7 +155,6 @@ const Activities: React.FC = () => {
                 ))}
               </div>
             </div>
-
           </div>
         )}
       </div>

@@ -14,7 +14,6 @@ const ACTIVITY_TITLES: Record<string, string> = {
   rope: "Rope Course Adventure",
   swim: "Swimming Pool Access",
   car: "Car activity ",
-  "jeep-safari": "Off-Road Jeep Safari",
   yoga: "Sunrise Yoga Session",
   cooking: "Traditional Cooking Class",
 };
