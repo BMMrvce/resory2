@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
             </button>
           ))}
           <button
-            onClick={() => scrollToSection("accommodations")}
+            onClick={() => scrollToSection("contact")}
             className="px-8 py-3 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-accent-sand hover:to-white hover:text-primary-800 text-white font-bold rounded-full transition-all shadow-[0_0_20px_rgba(52,160,109,0.3)] hover:shadow-[0_0_30px_rgba(232,223,208,0.5)] transform hover:-translate-y-0.5 border border-primary-400/30"
           >
             Book Now
@@ -103,7 +103,7 @@ const Navbar: React.FC = () => {
           </button>
         ))}
         <button
-          onClick={() => scrollToSection("accommodations")}
+          onClick={() => scrollToSection("contact")}
           className="mt-8 px-12 py-4 bg-primary-600 text-white rounded-full text-xl font-bold shadow-xl shadow-primary-500/30"
         >
           Book Now

@@ -7,7 +7,6 @@ import Rooms from './pages/Rooms';
 import Activities from './pages/Activities';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
-import Testimonials from './pages/Testimonials';
 
 const App: React.FC = () => {
   return (
@@ -34,7 +33,6 @@ const App: React.FC = () => {
           <Rooms />
           <Activities />
           <Gallery />
-          <Testimonials />
           <Contact />
         </main>
         

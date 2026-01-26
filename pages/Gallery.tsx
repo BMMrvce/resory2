@@ -5,6 +5,15 @@ import { GALLERY_IMAGES } from "../lib/constants";
 const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
+  const getSpanClass = (index: number) => {
+    // Create a staggered pattern for visual interest
+    const mod = index % 6;
+    if (mod === 0) return "md:col-span-2 md:row-span-2";
+    if (mod === 3) return "md:col-span-1 md:row-span-2";
+    if (mod === 4) return "md:col-span-2 md:row-span-1";
+    return "md:col-span-1 md:row-span-1";
+  };
+
   return (
     <section
       id="gallery"
@@ -20,23 +29,23 @@ const Gallery: React.FC = () => {
           </p>
         </div>
 
-        {/* Collage Masonry Grid */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8 p-4">
+        {/* Creative Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-[11rem] md:auto-rows-[12rem] lg:auto-rows-[13rem] gap-5 p-4">
           {GALLERY_IMAGES.map((src, index) => (
             <div
               key={index}
-              className="break-inside-avoid relative group rounded-2xl overflow-hidden cursor-pointer shadow-xl hover:shadow-primary-500/20 transition-all duration-500 hover:-translate-y-2 border border-white/5"
+              className={`relative group rounded-2xl overflow-hidden cursor-pointer shadow-xl hover:shadow-primary-500/25 transition-all duration-500 border border-white/5 bg-primary-900/20 ${getSpanClass(index)} hover:-translate-y-2 hover:-rotate-1`}
               onClick={() => setSelectedImage(src)}
             >
               <img
                 src={src}
                 alt={`Gallery ${index + 1}`}
-                className="w-full h-auto transform transition-transform duration-1000 group-hover:scale-110 filter brightness-90 group-hover:brightness-100"
+                className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110 filter brightness-90 group-hover:brightness-100"
               />
 
               {/* Premium overlay effect */}
-              <div className="absolute inset-0 bg-primary-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                <div className="bg-white/10 backdrop-blur-md p-4 rounded-full text-white border border-white/20 transform scale-50 group-hover:scale-100 transition-transform duration-500 delay-100">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-950/70 via-primary-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                <div className="bg-white/10 backdrop-blur-md p-4 rounded-full text-white border border-white/20 transform scale-50 group-hover:scale-100 transition-transform duration-500 delay-100 shadow-lg shadow-primary-700/30">
                   <ZoomIn size={32} className="text-primary-300" />
                 </div>
               </div>
@@ -57,7 +66,7 @@ const Gallery: React.FC = () => {
           <img
             src={selectedImage}
             alt="Full Preview"
-            className="max-w-full max-h-[90vh] rounded-lg shadow-[0_0_50px_rgba(0,0,0,0.5)] object-contain border border-white/10"
+            className="max-w-[80vw] max-h-[80vh] rounded-lg shadow-[0_0_40px_rgba(0,0,0,0.45)] object-contain border border-white/10"
             onClick={(e) => e.stopPropagation()}
           />
         </div>
