@@ -38,14 +38,16 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
         <button onClick={() => scrollToSection('home')} className="flex items-center space-x-3 group relative z-50">
-          <div className="p-2.5 bg-gradient-to-br from-primary-600 to-primary-800 rounded-xl group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(52,160,109,0.4)] border border-primary-500/30">
-            <Leaf className="text-accent-sand w-6 h-6 fill-white/10" />
-          </div>
+          <img 
+            src="/assets/imp/logo.jpeg" 
+            alt="Shine Lavish Logo"
+            className="w-12 h-12 rounded-xl object-cover shadow-[0_0_20px_rgba(52,160,109,0.4)] border border-primary-500/30 group-hover:scale-110 transition-transform"
+          />
           <div className="flex flex-col items-start">
             <span className="text-2xl font-serif font-bold tracking-wider text-white drop-shadow-lg leading-none">
               Shine Lavish
             </span>
-            <span className="text-[0.65rem] tracking-[0.2em] text-accent-sand uppercase font-light pl-0.5">Retreat & Spa</span>
+            <span className="text-[0.65rem] tracking-[0.2em] text-accent-sand uppercase font-light pl-0.5">Retreat</span>
           </div>
         </button>
 

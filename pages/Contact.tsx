@@ -114,9 +114,9 @@ const Contact: React.FC = () => {
                   Our Location
                 </h4>
                 <p className="text-gray-300 font-light text-sm leading-relaxed">
-                  Forest Valley Rd, Green Hills,
+                  Devagere, Bengaluru,
                   <br />
-                  Munnar, Kerala 685612
+                  Karnataka 560074
                 </p>
               </div>
             </div>
@@ -127,13 +127,13 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <h4 className="text-white font-serif font-bold text-lg mb-1">
-                  Phone
+                  Phone / WhatsApp
                 </h4>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919110606362"
                   className="text-gray-300 font-light hover:text-accent-sand transition-colors"
                 >
-                  +91 98765 43210
+                  +91 91106 06362
                 </a>
               </div>
             </div>
@@ -147,10 +147,10 @@ const Contact: React.FC = () => {
                   Email
                 </h4>
                 <a
-                  href="mailto:bookings@shinelavish.com"
+                  href="mailto:reservations@shinelavishretreat.com"
                   className="text-gray-300 font-light hover:text-accent-sand transition-colors"
                 >
-                  bookings@shinelavish.com
+                  reservations@shinelavishretreat.com
                 </a>
               </div>
             </div>

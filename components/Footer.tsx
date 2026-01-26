@@ -19,8 +19,12 @@ const Footer: React.FC = () => {
           
           {/* Brand */}
           <div className="space-y-6">
-            <div className="flex items-center space-x-2">
-              <Leaf className="text-primary-400 w-8 h-8" />
+            <div className="flex items-center space-x-3">
+              <img 
+                src="/assets/imp/logo.jpeg" 
+                alt="Shine Lavish Logo"
+                className="w-12 h-12 rounded-lg object-cover shadow-[0_0_20px_rgba(52,160,109,0.4)] border border-primary-500/30"
+              />
               <span className="text-3xl font-serif font-bold text-glow text-accent-sand">Shine Lavish</span>
             </div>
             <p className="text-gray-400 leading-relaxed font-light">
@@ -51,19 +55,19 @@ const Footer: React.FC = () => {
               <div className="p-2 bg-primary-500/10 rounded-lg group-hover:bg-primary-500/20 transition-colors">
                 <MapPin className="text-primary-400 w-5 h-5" />
               </div>
-              <span className="text-gray-300 font-light">Forest Valley Rd, Green Hills,<br/>Munnar, Kerala 685612</span>
+              <span className="text-gray-300 font-light">Devagere, Bengaluru,<br/>Karnataka 560074</span>
             </div>
             <div className="flex items-center space-x-4 group">
               <div className="p-2 bg-primary-500/10 rounded-lg group-hover:bg-primary-500/20 transition-colors">
                 <Phone className="text-primary-400 w-5 h-5" />
               </div>
-              <span className="text-gray-300 font-light">+91 98765 43210</span>
+              <span className="text-gray-300 font-light">+91 91106 06362</span>
             </div>
             <div className="flex items-center space-x-4 group">
               <div className="p-2 bg-primary-500/10 rounded-lg group-hover:bg-primary-500/20 transition-colors">
                 <Mail className="text-primary-400 w-5 h-5" />
               </div>
-              <span className="text-gray-300 font-light">bookings@shinelavish.com</span>
+              <span className="text-gray-300 font-light">reservations@shinelavishretreat.com</span>
             </div>
           </div>
         </div>
