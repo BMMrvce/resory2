@@ -12,6 +12,17 @@ import { ROOMS } from "../lib/constants";
 import { submitEnquiry } from "../services/dataService";
 
 const Contact: React.FC = () => {
+  // Get today's date in YYYY-MM-DD format for min date
+  const getTodayDate = () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
+  const todayDate = getTodayDate();
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -248,6 +259,7 @@ const Contact: React.FC = () => {
                     type="date"
                     name="checkInDate"
                     required
+                    min={todayDate}
                     value={formData.checkInDate}
                     onChange={handleChange}
                     className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 focus:bg-primary-950/30 transition-all [color-scheme:dark] backdrop-blur-sm"
@@ -261,6 +273,7 @@ const Contact: React.FC = () => {
                     type="date"
                     name="checkOutDate"
                     required
+                    min={todayDate}
                     value={formData.checkOutDate}
                     onChange={handleChange}
                     className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 focus:bg-primary-950/30 transition-all [color-scheme:dark] backdrop-blur-sm"

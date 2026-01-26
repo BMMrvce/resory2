@@ -72,14 +72,10 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
-          <div className="flex flex-col md:flex-row md:space-x-4 items-center">
-             <p>&copy; {new Date().getFullYear()} Shine Lavish Retreat. All rights reserved.</p>
-          </div>
-          <div className="mt-4 md:mt-0">
-            <span className="text-gray-600">Built by </span>
-            <a href="https://tantravruksha.in" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-white transition-colors font-medium">tantravruksha.in</a>
-          </div>
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-center items-center text-center text-gray-500 text-sm gap-4">
+          <p>&copy; {new Date().getFullYear()} Shine Lavish Retreat. All rights reserved.</p>
+          <span className="text-gray-600">Built by </span>
+          <a href="https://tantravruksha.in" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-white transition-colors font-medium">tantravruksha.in</a>
         </div>
       </div>
     </footer>
