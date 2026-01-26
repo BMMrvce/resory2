@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Loader2, ChevronLeft, ChevronRight } from "lucide-react";
+import { Loader2, ChevronLeft, ChevronRight, X, ZoomIn } from "lucide-react";
 import { fetchActivities } from "../services/dataService";
 import { Activity } from "../lib/types";
 
@@ -7,6 +7,7 @@ const Activities: React.FC = () => {
   const [activities, setActivities] = useState<Activity[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   // Touch handling state
   const [touchStart, setTouchStart] = useState<number | null>(null);
@@ -92,7 +93,7 @@ const Activities: React.FC = () => {
             onTouchEnd={onTouchEnd}
           >
             {/* Carousel Container */}
-            <div className="relative w-full h-full overflow-hidden rounded-3xl glass-card shadow-2xl border border-white/10 group hover:border-primary-500/30 transition-colors duration-500 select-none">
+            <div className="relative w-full h-full overflow-hidden rounded-3xl glass-card shadow-2xl border border-white/10 group hover:border-primary-500/30 transition-colors duration-500 select-none cursor-zoom-in md:cursor-default" onClick={() => window.innerWidth < 768 && setSelectedImage(activities[currentIndex]?.image)}>
               {/* Background Image of Current Activity */}
               <div key={currentIndex} className="absolute inset-0">
                 <img
@@ -124,7 +125,14 @@ const Activities: React.FC = () => {
                 <ChevronRight size={24} />
               </button>
 
-              {/* Content Overlay */}
+              {/* Content Overlay with Title */}
+              <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 z-10 bg-gradient-to-t from-primary-950 via-primary-950/50 to-transparent">
+                <div className="animate-fade-in-up">
+                  <h2 className="text-3xl md:text-5xl font-serif font-bold text-white drop-shadow-lg">
+                    {activities[currentIndex]?.title}
+                  </h2>
+                </div>
+              </div>
 
               {/* Indicators */}
               <div className="absolute bottom-6 right-8 z-20 flex space-x-2">
@@ -141,9 +149,31 @@ const Activities: React.FC = () => {
                 ))}
               </div>
             </div>
+
           </div>
         )}
       </div>
+
+      {/* Mobile Lightbox Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-[100] bg-primary-950/98 backdrop-blur-xl flex flex-col items-center justify-center p-4 animate-fade-in md:hidden"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button className="absolute top-6 right-6 text-white hover:text-primary-400 transition-colors p-2 bg-white/5 rounded-full">
+            <X size={32} />
+          </button>
+          <h2 className="text-2xl font-serif font-bold text-white mb-6 drop-shadow-lg">
+            {activities[currentIndex]?.title}
+          </h2>
+          <img
+            src={selectedImage}
+            alt="Activity Full View"
+            className="max-w-full max-h-[70vh] rounded-lg shadow-[0_0_40px_rgba(0,0,0,0.45)] object-contain border border-white/10"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </section>
   );
 };
