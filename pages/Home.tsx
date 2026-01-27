@@ -43,6 +43,11 @@ const Home: React.FC = () => {
               </span>
             </h1>
 
+            {/* Kannada Title */}
+            <h2 className="text-6xl md:text-7xl font-kannada font-bold italic text-accent-sand drop-shadow-[0_0_30px_rgba(218,180,105,0.8)] drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)]">
+              ಆರಾಮದ ವಿಶ್ರಾಂತಿ
+            </h2>
+
             {/* Subtext */}
             <p className="text-lg md:text-xl text-primary-50 max-w-2xl mx-auto font-light leading-relaxed mb-12 drop-shadow-md opacity-90 border-l-2 border-accent-gold/50 pl-6 italic">
               "Unwind in our crystal-glass villas, breathe the purest air, and
