@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS enquiries (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   name TEXT NOT NULL,
   phone TEXT NOT NULL,
+  email TEXT NOT NULL,
   room_type TEXT NOT NULL,
   check_in_date TEXT NOT NULL,
   check_out_date TEXT NOT NULL,
@@ -32,3 +33,13 @@ CREATE POLICY "Enable read for authenticated users only" ON enquiries
 
 -- Optional: If you want to view enquiries in the dashboard, you can disable RLS temporarily
 -- or create additional policies as needed
+
+-- ============================================
+-- ADD EMAIL COLUMN TO EXISTING TABLE
+-- ============================================
+-- If you already have the enquiries table and need to add the email column, run this:
+
+ALTER TABLE enquiries ADD COLUMN IF NOT EXISTS email TEXT NOT NULL DEFAULT '';
+
+-- After adding the column, you may want to remove the default constraint:
+-- ALTER TABLE enquiries ALTER COLUMN email DROP DEFAULT;

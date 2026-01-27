@@ -22,6 +22,7 @@ export interface Enquiry {
   id?: string;
   name: string;
   phone: string;
+  email: string;
   roomType: string;
   checkInDate: string;
   checkOutDate: string;

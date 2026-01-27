@@ -26,6 +26,7 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
+    email: "",
     roomType: "",
     checkInDate: "",
     checkOutDate: "",
@@ -81,6 +82,7 @@ const Contact: React.FC = () => {
       setFormData({
         name: "",
         phone: "",
+        email: "",
         roomType: "",
         checkInDate: "",
         checkOutDate: "",
@@ -192,9 +194,9 @@ const Contact: React.FC = () => {
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div className="space-y-2">
+            <form onSubmit={handleSubmit} className="space-y-4 relative z-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-1">
                   <label className="text-xs font-bold uppercase tracking-widest text-primary-300 ml-1">
                     Full Name
                   </label>
@@ -204,12 +206,12 @@ const Contact: React.FC = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 focus:bg-primary-950/30 transition-all placeholder-gray-500 backdrop-blur-sm"
+                    className="w-full bg-black/20 border border-white/10 rounded-xl px-3 py-2.5 text-white focus:outline-none focus:border-primary-500 focus:bg-primary-950/30 transition-all placeholder-gray-500 backdrop-blur-sm"
                     placeholder="John Doe"
                   />
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-1">
                   <label className="text-xs font-bold uppercase tracking-widest text-primary-300 ml-1">
                     Phone Number
                   </label>
@@ -219,13 +221,28 @@ const Contact: React.FC = () => {
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 focus:bg-primary-950/30 transition-all placeholder-gray-500 backdrop-blur-sm"
+                    className="w-full bg-black/20 border border-white/10 rounded-xl px-3 py-2.5 text-white focus:outline-none focus:border-primary-500 focus:bg-primary-950/30 transition-all placeholder-gray-500 backdrop-blur-sm"
                     placeholder="+91 90000 00000"
                   />
                 </div>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1">
+                <label className="text-xs font-bold uppercase tracking-widest text-primary-300 ml-1">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full bg-black/20 border border-white/10 rounded-xl px-3 py-2.5 text-white focus:outline-none focus:border-primary-500 focus:bg-primary-950/30 transition-all placeholder-gray-500 backdrop-blur-sm"
+                  placeholder="john@example.com"
+                />
+              </div>
+
+              <div className="space-y-1">
                 <label className="text-xs font-bold uppercase tracking-widest text-primary-300 ml-1">
                   Room Preference
                 </label>
@@ -233,7 +250,7 @@ const Contact: React.FC = () => {
                   name="roomType"
                   value={formData.roomType}
                   onChange={handleChange}
-                  className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 focus:bg-primary-950/90 transition-all appearance-none cursor-pointer backdrop-blur-sm"
+                  className="w-full bg-black/20 border border-white/10 rounded-xl px-3 py-2.5 text-white focus:outline-none focus:border-primary-500 focus:bg-primary-950/90 transition-all appearance-none cursor-pointer backdrop-blur-sm"
                 >
                   <option value="" className="bg-primary-950 text-gray-400">
                     Select a Room
@@ -250,8 +267,8 @@ const Contact: React.FC = () => {
                 </select>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div className="space-y-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-1">
                   <label className="text-xs font-bold uppercase tracking-widest text-primary-300 ml-1 flex items-center gap-2">
                     <Calendar size={14} /> Check-in
                   </label>
@@ -262,10 +279,10 @@ const Contact: React.FC = () => {
                     min={todayDate}
                     value={formData.checkInDate}
                     onChange={handleChange}
-                    className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 focus:bg-primary-950/30 transition-all [color-scheme:dark] backdrop-blur-sm"
+                    className="w-full bg-black/20 border border-white/10 rounded-xl px-3 py-2.5 text-white focus:outline-none focus:border-primary-500 focus:bg-primary-950/30 transition-all [color-scheme:dark] backdrop-blur-sm"
                   />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-1">
                   <label className="text-xs font-bold uppercase tracking-widest text-primary-300 ml-1 flex items-center gap-2">
                     <Calendar size={14} /> Check-out
                   </label>
@@ -276,12 +293,12 @@ const Contact: React.FC = () => {
                     min={todayDate}
                     value={formData.checkOutDate}
                     onChange={handleChange}
-                    className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 focus:bg-primary-950/30 transition-all [color-scheme:dark] backdrop-blur-sm"
+                    className="w-full bg-black/20 border border-white/10 rounded-xl px-3 py-2.5 text-white focus:outline-none focus:border-primary-500 focus:bg-primary-950/30 transition-all [color-scheme:dark] backdrop-blur-sm"
                   />
                 </div>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1">
                 <label className="text-xs font-bold uppercase tracking-widest text-primary-300 ml-1">
                   Your Message
                 </label>
@@ -289,8 +306,8 @@ const Contact: React.FC = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows={3}
-                  className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 focus:bg-primary-950/30 transition-all placeholder-gray-500 backdrop-blur-sm resize-none"
+                  rows={2}
+                  className="w-full bg-black/20 border border-white/10 rounded-xl px-3 py-2.5 text-white focus:outline-none focus:border-primary-500 focus:bg-primary-950/30 transition-all placeholder-gray-500 backdrop-blur-sm resize-none"
                   placeholder="Any special requests or questions?"
                 />
               </div>
@@ -305,7 +322,7 @@ const Contact: React.FC = () => {
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                className="w-full bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-primary-500/30 transition-all transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center space-x-3 mt-4"
+                className="w-full bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 text-white font-bold py-3 rounded-xl shadow-lg hover:shadow-primary-500/30 transition-all transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center space-x-3 mt-3"
               >
                 {status === "submitting" ? (
                   <span>Sending Request...</span>

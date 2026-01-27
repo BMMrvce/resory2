@@ -37,6 +37,7 @@ export const submitEnquiry = async (enquiry: Omit<Enquiry, 'id' | 'created_at'>)
     const dbPayload = {
       name: enquiry.name,
       phone: enquiry.phone,
+      email: enquiry.email,
       room_type: enquiry.roomType,
       check_in_date: enquiry.checkInDate,
       check_out_date: enquiry.checkOutDate,
