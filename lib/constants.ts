@@ -48,9 +48,18 @@ Object.entries(roomImages).forEach(([path, url]) => {
   }
 });
 
+// Optional overrides to map room IDs to specific filenames
+const ROOM_IMAGE_OVERRIDES: Record<string, string> = {
+  quad: "Quad suite",
+  standard: "standard",
+  aframe: "aframe",
+};
+
 // Function to get room image or fallback to first available image
 const getRoomImage = (roomId: string): string => {
+  const overrideKey = ROOM_IMAGE_OVERRIDES[roomId];
   return (
+    (overrideKey ? roomImageMap[overrideKey] : undefined) ||
     roomImageMap[roomId] ||
     Object.values(roomImageMap)[0] ||
     "/assets/rooms/villa.jpg"
