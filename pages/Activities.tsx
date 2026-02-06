@@ -131,14 +131,8 @@ const Activities: React.FC = () => {
                 <ChevronRight size={24} />
               </button>
 
-              {/* Content Overlay with Title */}
-              <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 z-10 bg-gradient-to-t from-primary-950 via-primary-950/50 to-transparent">
-                <div className="animate-fade-in-up">
-                  <h2 className="text-3xl md:text-5xl font-serif font-bold text-white drop-shadow-lg">
-                    {activities[currentIndex]?.title}
-                  </h2>
-                </div>
-              </div>
+              {/* Content Overlay with Title - Hidden */}
+              {/* Title hidden per user request */}
 
               {/* Indicators */}
               <div className="absolute bottom-6 right-8 z-20 flex space-x-2">
@@ -168,9 +162,6 @@ const Activities: React.FC = () => {
           <button className="absolute top-6 right-6 text-white hover:text-primary-400 transition-colors p-2 bg-white/5 rounded-full">
             <X size={32} />
           </button>
-          <h2 className="text-2xl font-serif font-bold text-white mb-6 drop-shadow-lg">
-            {activities[currentIndex]?.title}
-          </h2>
           <img
             src={selectedImage}
             alt="Activity Full View"
